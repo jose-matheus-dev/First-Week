@@ -1,0 +1,14 @@
+name: first-week
+
+services:
+  frontend:
+    build:
+      context: .
+      args:
+        BUILD_DIR: ./packages/frontend
+    ports:
+      - 8080:5173
+    volumes:
+      - ./packages/frontend/src/:/packages/frontend/src
+      - ./packages/frontend/index.html/:/packages/frontend/index.html
+      - ./packages/frontend/vite.config.ts/:/packages/frontend/vite.config.ts
